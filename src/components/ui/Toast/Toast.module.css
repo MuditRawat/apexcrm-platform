@@ -1,0 +1,106 @@
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .toast {
+  background-color: rgba(15, 23, 42, 0.85);
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+.toast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.success::before {
+  background-color: var(--color-success);
+}
+
+.error::before {
+  background-color: var(--color-error);
+}
+
+.info::before {
+  background-color: var(--color-brand-primary);
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.iconSuccess {
+  color: var(--color-success);
+}
+
+.iconError {
+  color: var(--color-error);
+}
+
+.iconInfo {
+  color: var(--color-brand-primary);
+}
+
+.textContainer {
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.message {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.closeButton {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--color-text-tertiary);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

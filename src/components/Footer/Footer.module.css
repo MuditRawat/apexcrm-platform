@@ -1,0 +1,213 @@
+.footer {
+  background-color: var(--color-bg-primary);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-3xl);
+  color: var(--color-text-secondary);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1.1fr 1.9fr;
+    gap: var(--spacing-3xl);
+  }
+}
+
+/* Brand Column */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-primary);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.logoIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--color-brand-primary);
+}
+
+.logoText {
+  background: linear-gradient(135deg, var(--color-text-primary) 30%, var(--color-brand-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brandDesc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 360px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.875rem;
+}
+
+.contactIcon {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.contactLink {
+  color: var(--color-text-secondary);
+}
+
+.contactLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.address {
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+/* Links Columns */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 640px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.colTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+  color: var(--color-brand-primary);
+}
+
+/* Bottom Bar */
+.bottomBar {
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .bottomContainer {
+    flex-direction: row;
+  }
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+
+.adminLink {
+  font-size: 0.75rem;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  font-weight: 600;
+  background-color: rgba(var(--color-brand-primary-rgb, 99, 102, 241), 0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(var(--color-brand-primary-rgb, 99, 102, 241), 0.25);
+  display: inline-flex;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.adminLink:hover {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  border-color: var(--color-brand-primary);
+  box-shadow: 0 2px 4px rgba(var(--color-brand-primary-rgb, 99, 102, 241), 0.15);
+}
+
+@media (min-width: 768px) {
+  .copyright {
+    text-align: left;
+  }
+}
+
+.socialWrapper {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.socialLink:hover {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  border-color: var(--color-brand-primary);
+}

@@ -1,0 +1,114 @@
+.faqSection {
+  padding: var(--spacing-3xl) 0;
+  background-color: var(--color-bg-primary);
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHeader {
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.sectionTitle {
+  margin-bottom: var(--spacing-md);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  color: var(--color-brand-primary);
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Accordion Styling */
+.accordionContainer {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.accordionItem {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.accordionItem:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.itemOpen {
+  border-color: var(--color-brand-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.accordionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-lg);
+  text-align: left;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.accordionHeader:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  background-color: var(--color-bg-secondary);
+}
+
+.questionText {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  padding-right: var(--spacing-md);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.chevron {
+  color: var(--color-text-tertiary);
+  transition: transform var(--transition-normal), color var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+  color: var(--color-brand-primary);
+}
+
+/* Accordion Content Smooth Transition */
+.accordionContentWrapper {
+  overflow: hidden;
+  transition: max-height var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.accordionContent {
+  padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+  border-top: 1px solid transparent;
+}
+
+.answerText {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}

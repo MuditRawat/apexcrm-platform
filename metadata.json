@@ -1,0 +1,6 @@
+{
+  "name": "CRM Landing Page",
+  "description": "A premium, fully responsive CRM SaaS landing page built with React.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
