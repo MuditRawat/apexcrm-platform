@@ -112,3 +112,38 @@
     opacity: 1;
   }
 }
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: left;
+  animation: shrink var(--toast-duration) linear forwards;
+}
+
+.success .progressBar {
+  background-color: var(--color-success);
+}
+
+.error .progressBar {
+  background-color: var(--color-error);
+}
+
+.info .progressBar {
+  background-color: var(--color-brand-primary);
+}
+
+.warning .progressBar {
+  background-color: #f59e0b;
+}
+
+@keyframes shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
