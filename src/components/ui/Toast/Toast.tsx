@@ -4,7 +4,7 @@ import styles from './Toast.module.css';
 
 export interface ToastProps {
   id: string;
-  type: 'success' | 'error' | 'info';
+  type: 'success' | 'error' | 'info' | 'warning';
   title: string;
   message: string;
   duration?: number;
@@ -16,21 +16,28 @@ export const Toast: React.FC<ToastProps> = ({
   type,
   title,
   message,
-  duration = 5000,
+  duration,
   onClose
 }) => {
   useEffect(() => {
-    if (duration === Infinity) return;
+    const resolvedDuration = duration !== undefined ? duration : (
+      type === 'success' ? 2000 :
+      type === 'info' ? 2000 :
+      type === 'warning' ? 3000 :
+      type === 'error' ? 4000 : 2000
+    );
+    if (resolvedDuration === Infinity) return;
     const timer = setTimeout(() => {
       onClose(id);
-    }, duration);
+    }, resolvedDuration);
     return () => clearTimeout(timer);
-  }, [id, duration, onClose]);
+  }, [id, type, duration, onClose]);
 
   const iconMap = {
     success: <CheckCircle className={styles.iconSuccess} size={20} />,
     error: <AlertCircle className={styles.iconError} size={20} />,
-    info: <CheckCircle className={styles.iconInfo} size={20} />
+    info: <CheckCircle className={styles.iconInfo} size={20} />,
+    warning: <AlertCircle className={styles.iconWarning} size={20} />
   };
 
   return (

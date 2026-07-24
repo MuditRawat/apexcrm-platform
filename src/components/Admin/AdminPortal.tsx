@@ -602,7 +602,7 @@ NOTIFY pgrst, 'reload schema';`;
       <div className={styles.authWrapper}>
         <div className={styles.loadingPulse}>
           <div className={styles.spinnerPulse}></div>
-          <p>Connecting to Supabase CRM systems...</p>
+          <p>Loading Admin Portal...</p>
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ import { Toast, ToastProps } from '../components/ui/Toast/Toast';
 import styles from './ToastContext.module.css';
 
 interface ToastOptions {
-  type: 'success' | 'error' | 'info';
+  type: 'success' | 'error' | 'info' | 'warning';
   title: string;
   message: string;
   duration?: number;
@@ -23,11 +23,17 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setToasts((prevToasts) => prevToasts.filter((t) => t.id !== id));
   }, []);
 
-  const showToast = useCallback(({ type, title, message, duration = 5000 }: ToastOptions) => {
+  const showToast = useCallback(({ type, title, message, duration }: ToastOptions) => {
     const id = Math.random().toString(36).substring(2, 9);
+    const resolvedDuration = duration !== undefined ? duration : (
+      type === 'success' ? 2000 :
+      type === 'info' ? 2000 :
+      type === 'warning' ? 3000 :
+      type === 'error' ? 4000 : 2000
+    );
     setToasts((prevToasts) => [
       ...prevToasts,
-      { id, type, title, message, duration }
+      { id, type, title, message, duration: resolvedDuration }
     ]);
   }, []);
 

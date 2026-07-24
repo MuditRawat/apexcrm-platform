@@ -18,10 +18,12 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
     // Fallback to system preference
     if (typeof window !== 'undefined' && window.matchMedia) {
-      const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return systemPreference ? 'dark' : 'light';
+      if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
+      }
+      return 'dark'; // Default to dark mode
     }
-    return 'light';
+    return 'dark'; // Default to dark mode
   });
 
   useEffect(() => {
