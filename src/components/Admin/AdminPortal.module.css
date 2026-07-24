@@ -793,3 +793,219 @@ tr:hover .rowChevron {
   user-select: none;
 }
 
+/* Mobile Responsiveness Improvements (Apply ONLY under desktop/tablet breakpoints) */
+
+@media (max-width: 1023px) {
+  .detailCard {
+    position: static; /* Let details stack statically instead of sticky-floating awkwardly on mobile */
+  }
+}
+
+@media (max-width: 767px) {
+  /* Transforming leadsTable into responsive cards */
+  .leadsTable {
+    display: block;
+    width: 100%;
+  }
+  
+  .leadsTable thead {
+    display: none; /* Hide header row on mobile, information is self-evident */
+  }
+  
+  .leadsTable tbody {
+    display: block;
+    width: 100%;
+  }
+  
+  .leadsTable tbody tr {
+    display: block;
+    position: relative;
+    padding: var(--spacing-md) !important;
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-bg-primary);
+    transition: background-color var(--transition-fast);
+    width: 100%;
+  }
+  
+  .leadsTable td {
+    display: block;
+    padding: 0 !important;
+    border: none !important;
+    text-align: left;
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .leadsTable td:last-child {
+    margin-bottom: 0;
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: auto;
+  }
+  
+  /* Prevent contact name or content from overlapping the delete button at the top-right */
+  .leadsTable td:first-child .leadCell {
+    padding-right: 2.5rem;
+  }
+  
+  /* Hide right chevron icon on mobile to clean up and preserve screen space */
+  .rowChevron {
+    display: none !important;
+  }
+  
+  .leadDate {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Header Container Adjustments */
+  .dbHeaderContainer {
+    padding: var(--spacing-sm) var(--spacing-md);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+  }
+  
+  .dbBranding {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .dbActions {
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Limit maximum width of email name with truncation to avoid layout stretch */
+  .sessionUser {
+    max-width: 170px;
+  }
+  
+  .sessionUser span {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+  }
+  
+  /* Layout Padding and Grid spacing adjustments */
+  .dbMain {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  /* Compact stats card presentation on small viewports */
+  .statsCard {
+    padding: var(--spacing-sm) var(--spacing-md) !important;
+    gap: var(--spacing-sm);
+  }
+  
+  .statsVal {
+    font-size: 1.25rem;
+  }
+  
+  .statsIconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  /* Control panel dropdowns and buttons alignment */
+  .filtersGroup {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--spacing-sm) !important;
+    width: 100%;
+  }
+  
+  .filterDropdownWrapper {
+    width: 100%;
+  }
+  
+  .filterSelect {
+    width: 100%;
+    font-size: 0.75rem;
+    padding-left: 1.75rem;
+    padding-right: 1.25rem;
+  }
+  
+  .sortToggle {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .iconBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .exportBtn {
+    grid-column: span 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Lead detail card padding adjustments */
+  .leadDetailsPanel {
+    padding: var(--spacing-md) !important;
+  }
+  
+  .detailHeader {
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .detailHeaderBadge {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+  }
+  
+  .detailName {
+    font-size: 1.125rem;
+  }
+  
+  .panelDivider {
+    margin: var(--spacing-md) 0;
+  }
+  
+  /* Stack lead details metadata in a single, fully readable column on narrow screens */
+  .metaGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .metaItem {
+    gap: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Auth & Setup Card Spacing adjustments */
+  .authWrapper {
+    padding: var(--spacing-md);
+  }
+  
+  .authCard, .sqlCard {
+    padding: var(--spacing-md) !important;
+  }
+  
+  /* Modal Overlay Centering and Padding for tiny devices */
+  .modalOverlay {
+    padding: var(--spacing-md);
+  }
+  
+  .modalContent {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+}
+
